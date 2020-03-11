@@ -14,9 +14,7 @@ class MaximalSquare
 		for($j = 0; $j < $columns; $j++) {
 			$square[0][$j] = $matrix[0][$j]; 
 		}
-		echo "<pre>";
-		print_r($square);
-		die('hit');
+		
 		for($i = 1; $i < $rows; $i++) { 
 			for($j = 1; $j < $columns; $j++) 
 			{ 
