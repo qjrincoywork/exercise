@@ -1,34 +1,32 @@
 <?php
-class Kaprekars
-{
-    public function constantValue($number, $prev = 0, $iterations = 0)  
-    {
-        if ($number == 0)  
+    function kaprekarsRec($n, $prev = 0, $iteration = 0)  
+    {  
+        if ($n == 0)  
         return 0;
 
-        $prev = $number;
-        $toAscend = str_split($prev);
-        $toDescend = str_split($prev);
-        sort($toAscend);
-        rsort($toDescend);
-        $subtrahend = implode("", $toAscend);
-        $minuend = implode("", $toDescend);
-        $difference = '';
+        $prev = $n;
+        $ascArr = str_split($prev);
+        $descArr = str_split($prev);
+        sort($ascArr);
+        rsort($descArr);
+        $asc = implode("", $ascArr);
+        $desc = implode("", $descArr);
+        $diff = '';
         
-        $difference = $minuend - $subtrahend;
-        if (($difference != $prev) && ($difference||$prev == 6147))
-        {
-            $iterations++;
-        } elseif ($difference == $prev) {
-            return $difference."<br> Iterations: ".$iterations."<br>";
+        $diff = $desc - $asc;
+        if (($diff != $prev) && ($diff||$prev == 6147)) {
+            $iteration++;
         }
         
-        return $this->constantValue($difference, $prev, $iterations);
+        if ($diff == $prev){
+            return $diff."<br> Iterations: ".$iteration."<br>";
+        }
+        
+        return kaprekarsRec($diff, $prev, $iteration);
     }
-}
-    $kaprekars = new Kaprekars;
-    echo $kaprekars->constantValue(3524) . "<br>";  
-    echo $kaprekars->constantValue(1000) . "<br>";  
-    echo $kaprekars->constantValue(1234) . "<br>";
-    echo $kaprekars->constantValue(9812) . "<br>"; 
+    
+    echo kaprekarsRec(3524) . "<br>";  
+    echo kaprekarsRec(1000) . "<br>";  
+    echo kaprekarsRec(1234) . "<br>";
+    echo kaprekarsRec(9812) . "<br>"; 
 ?>
