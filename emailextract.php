@@ -1,5 +1,7 @@
 <?php
-    function extractEmail($email)
+class User
+{
+    public function extractEmail($email)
     {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             return "Invalid email format";
@@ -17,9 +19,10 @@
             return $username;
         }
     }
-    
+}
+    $user = new User;
     $email = "quirjohnincoy@gmail.com";
     echo "<pre>";
-    echo extractEmail($email);
+    echo $user->extractEmail($email);
     echo "</pre>";
 ?>

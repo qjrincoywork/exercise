@@ -1,5 +1,8 @@
 <?php
-    function removeDuplicate($string) {
+class StringManipulate
+{
+    public function removeDuplicate($string)
+    {
         $tmp = [];
         $i = 0;
         
@@ -15,31 +18,10 @@
         
         return $result;
     }
-
-    $string = "quirjohnincoy";
+}
+    $stringManipulate = new StringManipulate;
+    $value = "quirjohnincoy";
     echo "<pre>";
-    echo removeDuplicate($string);
+    echo $stringManipulate->removeDuplicate($value);
     echo "</pre>";
-    //
-    /* $var_arr = array();
-    $j = mb_strlen($theString);
-    for ($k = 0; $k < $j; $k++)
-    {
-        $char = mb_substr($theString, $k, 1);
-        $var_arr[$char] = $k;
-    }
-    $string = '';
-    foreach ($var_arr as $k => $v) {
-        $string .= $k;
-    }
-    echo $string; */
-
-    //
-    /* $str = str_split($theString);
-    $strArr = array_unique($str);
-    $theString = '';
-    foreach ($strArr as $v) {
-        $theString .= $v;
-    }
-    echo $theString;*/
 ?>
