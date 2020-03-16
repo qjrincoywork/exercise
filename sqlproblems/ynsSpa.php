@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>  
+    <title>Exercise - SQL Problems</title>  
+</head>
+<body>
+    <a href="ynsEmployees.php">Employees By Age</a></br>
+    <a href="ynsSpa.php">Sort Therapists Schedule</a></br>
+    <a href="ynsPositions.php">Get Employee Details and Positions</a></br>
+    <a href="ynsDBLogic.php">Query Logic</a></br>
 <?php
 class User 
 {
@@ -67,3 +77,6 @@ class User
     $table .= "</tbody><table>";
     echo $table;
 ?>
+    
+</body>
+</html>
